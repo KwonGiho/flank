@@ -1,4 +1,4 @@
-package com.example.demo.Dto;
+package com.example.demo.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,8 +15,4 @@ import lombok.ToString;
 public class UserLoginData {
     private String email;
     private String password;
-    private String loginType;
-    private String refreshDate;
-    private String key;
-
 }

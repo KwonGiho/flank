@@ -1,7 +1,9 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
-import com.example.demo.Dto.UserDTO;
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
+import com.example.demo.dto.UserDTO;
+import com.example.demo.dto.UserLoginData;
+import com.example.demo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,16 +11,32 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 /**
  * Created by kwongiho on 2017. 5. 21..
  */
 @RestController("/user")
 public class UserController {
+
+    @Autowired
+    UserService userServiceImpl;
+
+    @RequestMapping(value="/test",method = RequestMethod.GET)
+    public String testMethod(HttpServletRequest request , HttpServletResponse response ) throws Exception {
+        return "testSuccess";
+    }
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public UserDTO login(HttpServletRequest request , HttpServletResponse response , @RequestBody UserLoginData userLoginData) throws Exception {
+        return userServiceImpl.login(userLoginData , request);
+    }
+
+    @RequestMapping(value="/register" , method = RequestMethod.POST)
+    public UserDTO login(HttpServletRequest request , HttpServletResponse response , @RequestBody UserDTO userDTO) throws Exception {
+        System.out.println("asdfaksdbflkjqbwef");
+        return userServiceImpl.register(userDTO);
+    }
     /*
-	 * '유저 리스트 조회' 'GET' '/users' 'Observable<List<User>>'
-	 */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public UserDTO login(HttpServletRequest request, HttpServletResponse response,
                                               @RequestBody LoginDataDTO loginData) throws Exception {
@@ -40,5 +58,5 @@ public class UserController {
             default:
                 throw new RuntimeException("invaild login code");
         }
-    }
+    }*/
 }
