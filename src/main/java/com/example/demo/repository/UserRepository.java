@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import com.example.demo.dto.UserDTO;
+import com.example.demo.dto.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
@@ -10,5 +11,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<UserDTO,String> {
     UserDTO findByEmailAndPassword(String email,String password);
-    //UserDTO findByEmail(String email);
+    UserDTO findByEmail(String email);
 }

@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import com.example.demo.dto.user.User;
+import com.example.demo.dto.user.UserLogin;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +14,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class UserLoginData {
+public class UserLoginData implements UserLogin {
     private String email;
     private String password;
 }

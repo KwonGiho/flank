@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import com.example.demo.dto.user.User;
+import com.example.demo.dto.user.UserRegister;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,7 +22,12 @@ import java.io.Serializable;
 @ToString
 @Entity
 @Table(name = "user")
-public class UserDTO implements User , Serializable {
+/**
+ * This class used for register.
+ * And this class can be use model class.
+ *
+ */
+public class UserDTO implements User, Serializable ,UserRegister{
     @Id
     private String email;
     @Column(name="nickname")
