@@ -7,7 +7,7 @@ import com.example.demo.dto.user.User;
 import com.example.demo.dto.user.UserLogin;
 import com.example.demo.dto.user.UserRegister;
 import com.example.demo.repository.UserRepository;
-import org.junit.jupiter.api.Test;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by kwongiho on 2017. 5. 21..
  */
-@Service
+@Service(value="UserService")
 public class UserServiceImpl implements UserService{
     @Autowired
     UserRepository userRepository;

@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.dto.user.UserLogin;
 import com.example.demo.dto.user.UserRegister;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 
