@@ -20,6 +20,14 @@ public class MuscleController {
     @Autowired
     MuscleService muscleServiceImpl;
 
+    /**
+     * not implements now.
+     * @param request
+     * @param response
+     * @param muscleDTO
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value="/musclename" , method= RequestMethod.POST)
     public MuscleDTO getMuscleDTOByMuscleName(HttpServletRequest request , HttpServletResponse response , @RequestBody MuscleDTO muscleDTO) throws Exception {
         return null;
