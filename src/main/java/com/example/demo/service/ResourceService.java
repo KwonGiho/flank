@@ -9,7 +9,7 @@ public interface ResourceService {
     ResourceDTO getResourceByResource(int resource);
     ResourceDTO getResourceByUrl(String url);
     ResourceDTO getResourceByResourceAndUrl(int resource , String url);
-    ResourceDTO getResourceByResourceAndUrl(ResourceDTO resourceDTO);
+
     ResourceDTO insertResourceDTO(int resource, String type , String url);
     ResourceDTO insertResourceDTO(ResourceDTO resourceDTO);
 

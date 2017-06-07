@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.cipher.JwtService;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.dto.UserLoginData;
 import com.example.demo.dto.UserSession;
@@ -43,5 +44,10 @@ public class UserController {
             return resultDTO;
         return null;*/
 
+    }
+
+    @RequestMapping(value="/jwtest",method = RequestMethod.GET)
+    public String jwtest(HttpServletRequest request , HttpServletResponse response ) throws Exception {
+        return new JwtService().getJWT();
     }
 }

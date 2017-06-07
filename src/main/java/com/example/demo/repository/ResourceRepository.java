@@ -9,6 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface ResourceRepository extends JpaRepository<ResourceDTO,String> {
     ResourceDTO findByResource(int resource);
     ResourceDTO findByResourceAndUrl(int resource , String url);
-    //ResourceDTO findByResourceAndUrl(ResourceDTO resourceDTO);
     ResourceDTO findByUrl(String url);
 }

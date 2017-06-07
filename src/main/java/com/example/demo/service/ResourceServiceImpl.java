@@ -30,12 +30,6 @@ public class ResourceServiceImpl implements ResourceService {
     }
 
     @Override
-    public ResourceDTO getResourceByResourceAndUrl(ResourceDTO resourceDTO) {
-        //return resourceRepository.findByResourceAndUrl(resourceDTO);
-        return null;
-    }
-
-    @Override
     public ResourceDTO insertResourceDTO(int resource, String type, String url) {
         return resourceRepository.save(new ResourceDTO(resource,type,url));
     }

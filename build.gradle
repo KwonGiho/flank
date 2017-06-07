@@ -37,5 +37,9 @@ dependencies {
 	compileOnly('org.projectlombok:lombok')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+
+	compile 'io.jsonwebtoken:jjwt:0.6.0'
 	//testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }
