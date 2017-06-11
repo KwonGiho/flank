@@ -22,5 +22,6 @@ public class FlankApplication extends WebMvcConfigurerAdapter{
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/js/**").addResourceLocations("classpath:/static/js/");
+		registry.addResourceHandler("/img.backgrounds/**").addResourceLocations("classpath:/static/img.backgrounds/");
 	}
 }
