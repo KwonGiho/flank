@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.Column;
@@ -23,4 +24,5 @@ public class ExerciseDTO {
     private int resource;
     @Column(name="trainer_code")
     private String trainerCode;
+
 }
