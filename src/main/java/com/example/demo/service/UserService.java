@@ -17,4 +17,5 @@ public interface UserService {
     UserDTO login(UserLogin userLoginData , HttpServletRequest request);
 
 
+    void createVerificationTokenForUser(UserDTO user, String token);
 }

@@ -61,17 +61,9 @@ public class UserServiceImpl implements UserService{
             return false;
         return true;
     }
-    /*@Test
-    public void registerCheck() throws Exception{
-        boolean isRegister = isRegister("shng10503@naver.com");
-        System.out.println(isRegister("shng10503@naver.com"));
-    }
-    @Test
-    public void loginTest() throws Exception {
-        UserLoginData userLoginData = new UserLoginData();
-        userLoginData.setEmail("shng10503@naver.oom");
-        userLoginData.setPassword("pwd");
-        System.out.println(login(userLoginData,null));
-    }*/
 
+    @Override
+    public void createVerificationTokenForUser(UserDTO user, String token) {
+
+    }
 }

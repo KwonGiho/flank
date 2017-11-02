@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.lang.annotation.Documented;
+
 /**
  * Created by kwongiho on 2017. 5. 21..
  */
@@ -14,7 +16,10 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
+
 public class UserLoginData implements UserLogin {
     private String email;
     private String password;
+
+
 }

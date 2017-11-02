@@ -19,16 +19,13 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@ToString
 @Entity
 @Table(name = "user")
 @Data
 /**
  * This class used for register.
- * And this class can be use model class.
- *
+ * And can use for model class.
  */
-// 해당 클래스명은 멤버필드에 대한 대표 이름으로 설정해야된다
 public class UserDTO implements User, Serializable ,UserRegister{
     @Id
     private String email;
@@ -36,5 +33,4 @@ public class UserDTO implements User, Serializable ,UserRegister{
     private String nickName;
     private String gender;
     private String password;
-
 }
