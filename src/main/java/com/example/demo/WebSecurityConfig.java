@@ -25,7 +25,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                //.antMatchers("") // 인증 안해도 접근 가능해야 할 url들 넣어주기
+                .antMatchers("/swagger-ui.html", "/configuration/ui",
+                                "/swagger-resources", "/configuration/security",
+                                "/swagger-ui.html", "/webjars/**","/swagger/**").permitAll() // 인증 안해도 접근 가능해야 할 url들 넣어주기
         .anyRequest().authenticated()
                 .and()
                 .formLogin()
