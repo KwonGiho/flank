@@ -9,14 +9,14 @@ import com.example.demo.dto.user.UserLogin;
 import com.example.demo.dto.user.UserRegister;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import static org.springframework.http.MediaType.*;
 
 /**
  * Created by kwongiho on 2017. 5. 21..
@@ -32,22 +32,20 @@ public class UserController {
         return "testSuccess";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public UserDTO login(HttpServletRequest request , HttpServletResponse response , @RequestBody UserLoginData userLoginData) throws Exception {
+    /*@PostMapping("/login")
+    public UserDTO login(HttpServletRequest request
+            , HttpServletResponse response , @RequestBody UserLoginData userLoginData) throws Exception {
+        System.out.println(userLoginData.toString());
         return userServiceImpl.login(userLoginData , request);
-    }
+    }*/
 
     @RequestMapping(value="/register" , method = RequestMethod.POST)
     public UserRegister register(HttpServletRequest request , HttpServletResponse response , @RequestBody UserDTO userDTO) throws Exception {
         return userServiceImpl.register(userDTO);
-        /*if(resultDTO != null)
-            return resultDTO;
-        return null;*/
-
     }
 
     @RequestMapping(value="/jwtest",method = RequestMethod.GET)
     public String jwtest(HttpServletRequest request , HttpServletResponse response ) throws Exception {
-        return new JwtService().getJWT();
+        return null;//return new JwtService().getJWT();
     }
 }

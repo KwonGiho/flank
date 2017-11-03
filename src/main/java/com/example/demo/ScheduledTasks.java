@@ -13,7 +13,5 @@ public class ScheduledTasks {
 
     @Scheduled(fixedRate = 500)
     public void reportCurrentTime() {
-
-        //System.out.println("Testing successful ");
     }
 }
